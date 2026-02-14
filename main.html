@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="flower.css">
+
+    <!-- Romantic font -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="cdnjs.cloudflare.com" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+<div class="scene idle" id="plant">
+  <svg width="220" height="120">
+    <defs>
+      <path id="curve" d="M20,90 Q110,20 200,90" />
+    </defs>
+    <text>
+      <textPath href="#curve" startOffset="50%" text-anchor="middle">
+        Happy Valentine
+      </textPath>
+    </text>
+  </svg>
+
+  <div class="stem">
+    <div class="leaf left"></div>
+    <div class="leaf right"></div>
+    <div class="heart"></div>
+  </div>
+
+  <div class="pot"></div>
+</div>
+
+<div class="message">
+  <h2 class="title">Message</h2>
+  <p class="inner-message">
+  Hewwo, Happy Valentine's 💗
+  You are the most amazing woman I've ever met.
+  You're beautiful, smart, tenacious
+  and everything else in between.
+
+  I hope we can grow closer together again
+  and maybe meet again at some point,
+  and who knows the rest.
+
+  I hope you have a beautiful day.
+    -- Andre, the rat living under your bed
+  </p>
+  <div class="btn-cont" id="musicBtn"><i class="fa-brands fa-deezer fa-3x"></i></div>
+  <audio id="music" src="Can We Be Best Friends In Love _ - Original Song.mp3"></audio>
+</div>
+
+<div class="hearts"></div>
+
+
+<script src="flower.js"></script>
+<script src="music.js"></script>
+<script src="hearts.js"></script>
+<script src="https://kit.fontawesome.com/86cd0ce08c.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

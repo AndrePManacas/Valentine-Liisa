@@ -1,0 +1,150 @@
+  .scene {
+    position: relative;
+    width: 260px;
+    height: 380px;
+    cursor: pointer;
+  }
+
+  /* Pot */
+  .pot {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 130px;
+    height: 65px;
+    background: #c97c5d;
+    transform: translateX(-50%);
+    border-radius: 0 0 18px 18px;
+  }
+
+  .pot::before {
+    content: "";
+    position: absolute;
+    top: -14px;
+    left: -12px;
+    width: 154px;
+    height: 22px;
+    background: #b66b4a;
+    border-radius: 14px;
+  }
+
+  /* Idle breathing glow */
+  .idle .pot {
+    animation: pot-breathe 2.5s ease-in-out infinite;
+  }
+
+  @keyframes pot-breathe {
+    0%, 100% {
+      box-shadow: 0 0 6px rgba(255, 77, 109, 0.15);
+      transform: translateX(-50%) scale(1);
+    }
+    50% {
+      box-shadow: 0 0 26px rgba(255, 77, 109, 0.5);
+      transform: translateX(-50%) scale(1.03);
+    }
+  }
+
+  /* Stem */
+  .stem {
+    position: absolute;
+    bottom: 65px;
+    left: 50%;
+    width: 6px;
+    height: 18px; /* tiny sprout */
+    background: #3b7d3b;
+    transform: translateX(-50%);
+    transition: height 2.6s ease-in-out;
+  }
+
+  /* Leaves */
+  .leaf {
+    position: absolute;
+    width: 34px;
+    height: 18px;
+    background: #4caf50;
+    border-radius: 100% 0;
+    opacity: 0;
+    transition: opacity 1s ease 1.4s;
+  }
+
+  .leaf.left {
+    left: -32px;
+    top: 90px;
+    transform: rotate(-30deg);
+  }
+
+  .leaf.right {
+    right: -32px;
+    top: 120px;
+    transform: rotate(210deg);
+  }
+
+  /* Heart flower */
+  .heart {
+    position: absolute;
+    top: -58px;
+    left: 50%;
+    width: 48px;
+    height: 48px;
+    background: #ff4d6d;
+    transform: translateX(-50%) rotate(-45deg) scale(0);
+    opacity: 0;
+    transition:
+      transform 1.2s ease 2.4s,
+      opacity 1.2s ease 2.4s;
+  }
+
+  .heart::before,
+  .heart::after {
+    content: "";
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    background: #ff4d6d;
+    border-radius: 50%;
+  }
+
+  .heart::before {
+    top: -24px;
+    left: 0;
+  }
+
+  .heart::after {
+    left: 24px;
+    top: 0;
+  }
+
+  /* Curved text */
+  svg {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
+    transition: opacity 1.2s ease 3.4s;
+  }
+
+  text {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 700;
+    fill: #ff4d6d;
+  }
+
+  /* Grown state */
+  .grown .stem {
+    height: 185px;
+  }
+
+  .grown .leaf {
+    opacity: 1;
+  }
+
+  .grown .heart {
+    transform: translateX(-50%) rotate(-45deg) scale(1);
+    opacity: 1;
+  }
+
+  .grown svg {
+    opacity: 1;
+  }
